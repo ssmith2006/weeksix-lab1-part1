@@ -1,17 +1,26 @@
 "use strict";
 
-const numArrays = ["100", "456", "98", "45", "43", "73"];
+let numArrays = ["100", "456", "98", "45", "43", "73"];
 
-const evens = numArrays.filter((num) => num % 2 === 0);
+let evens = numArrays.filter((num) => num % 2 === 0);
 
-const ul = document.createElement("ul"); 
+let ul = document.createElement("ul"); 
+
+let ulEvens = document.createElement("ul");
 
 for (let i = 0; i < numArrays.length; i++) {
 
-  const li = document.createElement("li"); 
+  let li = document.createElement("li"); 
   li.textContent = numArrays[i]; 
   ul.appendChild(li); 
 }
 
+for (let i = 0; i < evens.length; i++) {
+
+  let li = document.createElement("li");
+  li.textContent = evens[i];
+  ulEvens.appendChild(li);
+}
+
 document.getElementById("numArrays").appendChild(ul);
-document.getElementById("evens").textContent = "Even numbers: " + evens.join(", ");
+document.getElementById("evens").appendChild(ulEvens);
